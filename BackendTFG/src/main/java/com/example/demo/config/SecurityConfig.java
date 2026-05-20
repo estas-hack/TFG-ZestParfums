@@ -19,6 +19,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
  
 import java.util.List;
  
+// v2 - CORS y JWT configurados para produccion
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
