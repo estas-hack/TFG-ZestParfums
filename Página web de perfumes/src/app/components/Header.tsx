@@ -101,20 +101,38 @@ export function Header({ onSearchChange, searchValue }: HeaderProps) {
 
             {/* Icons */}
             {token ? (
-              <Link
-                to={isAdmin ? "/admin" : "/dashboard"}
-                className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-background dark:bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted dark:hover:bg-muted transition-colors"
-              >
-                {isAdmin ? "Admin" : "Mi cuenta"}
-              </Link>
-            ) : (
-              <Link
-                to="/login"
-                className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-background dark:bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted dark:hover:bg-muted transition-colors"
-              >
-                Iniciar sesión
-              </Link>
-            )}
+  isAdmin ? (
+    <>
+      <Link
+        to="/dashboard"
+        className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-background dark:bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted dark:hover:bg-muted transition-colors"
+      >
+        Mi cuenta
+      </Link>
+
+      <Link
+        to="/admin"
+        className="hidden md:inline-flex items-center gap-2 rounded-full border border-amber-500 bg-amber-500 px-4 py-2 text-sm font-medium text-white hover:bg-amber-600 transition-colors"
+      >
+        Admin
+      </Link>
+    </>
+  ) : (
+    <Link
+      to="/dashboard"
+      className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-background dark:bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted dark:hover:bg-muted transition-colors"
+    >
+      Mi cuenta
+    </Link>
+  )
+) : (
+  <Link
+    to="/login"
+    className="hidden md:inline-flex items-center gap-2 rounded-full border border-border bg-background dark:bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-muted dark:hover:bg-muted transition-colors"
+  >
+    Iniciar sesión
+  </Link>
+)}
             <Link
               to="/favorites"
               className="relative p-2 hover:bg-muted dark:hover:bg-muted rounded-full transition-colors hidden md:inline-flex"
