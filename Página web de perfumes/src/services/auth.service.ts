@@ -54,7 +54,7 @@ const logout = (): void => {
     localStorage.removeItem("isAdmin");
     window.dispatchEvent(new Event("userCartChange"));
   }
-  window.location.href = "/login";
+  window.location.replace("/");
 };
 
 export default { login, logout, register };
